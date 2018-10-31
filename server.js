@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (request, response) => {
     console.log('getting to index');
-    response.render('index', { number, title: 'Epic Number Game' });
+    response.render('index', { title: 'Epic Number Game' });
 });
 
 // const server = app.listen(1337);
@@ -35,6 +35,8 @@ io.on('connection', (socket) => {
 
     socket.on('resetClicked', (socket) => {
         numberUpdated(resetCount);
+        // when reset button is click, also set count var back to 0
+        count = 0;
     });
 
     socket.emit('numberUpdated', count);

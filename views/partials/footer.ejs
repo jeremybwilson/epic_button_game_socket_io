@@ -1,7 +1,7 @@
         </div>
         <script type ="text/javascript">
             $(document).ready(() => {
-            
+
                 var socket = io.connect();
 
                 $('#counterButton').click(() => {
@@ -12,6 +12,13 @@
                 });
                 socket.on('numberUpdated', (number) => {
                     $('#number').text(number);
+                    console.log(`number: ${number}`);
+                    if(number != 1){
+                        $('#times').show();
+                        $('#times').text('(s)');
+                    } else {
+                        $('#times').hide();
+                    }
                 });
             });
         </script>
