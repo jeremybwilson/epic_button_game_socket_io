@@ -1,0 +1,15 @@
+<% include partials/header %>
+<div class="row">
+        <div class="col">
+            <h1><%= title %></h1>
+            <h3>The button has been pushed <span id="number">0</span> time<% if(number != 1) { %><% } %>(s)</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Push the button to update the count!</p>
+            <button class="btn btn-primary" id="counterButton">Push the epic button</button>
+            <button class="btn btn-warning" id="resetButton">Reset</button>
+        </div>
+    </div>
+<% include partials/footer %>

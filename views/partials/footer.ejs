@@ -1,0 +1,19 @@
+        </div>
+        <script type ="text/javascript">
+            $(document).ready(() => {
+            
+                var socket = io.connect();
+
+                $('#counterButton').click(() => {
+                    socket.emit('buttonClicked')
+                });
+                $('#resetButton').click(() => {
+                    socket.emit('resetClicked')
+                });
+                socket.on('numberUpdated', (number) => {
+                    $('#number').text(number);
+                });
+            });
+        </script>
+    </body>
+</html>
